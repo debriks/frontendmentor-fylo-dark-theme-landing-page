@@ -1,0 +1,50 @@
+@use "../utils/variables" as *;
+@use "../utils/mixins" as *;
+@use "../utils/functions" as *;
+
+.article {
+  img {
+    width: clamp($width-start, 50vw, rem(760));
+  }
+
+  &__txt {
+    width: clamp($width-start, 36vw, rem(1100));
+
+    &--title {
+      font-family: $ff-heading;
+      font-size: $fs-h1-feature;
+    }
+
+    .br {
+      display: block;
+
+      @include breakpoint(medium) {
+        display: none;
+      }
+    }
+
+    &--body {
+      gap: rem(20);
+      padding: rem(20) 0 rem(20);
+    }
+
+    &--link {
+      width: max-content;
+      color: $clr-fluo-green;
+      gap: rem(7);
+      border-bottom: rem(1) solid $clr-fluo-green;
+      font-size: $fs-small;
+      transition: all ease-in-out 0.2s;
+
+      &:hover {
+        color: $clr-txt-white;
+        border-bottom: rem(1) solid $clr-txt-white;
+      }
+
+      img {
+        width: clamp(rem(18), 0.4vw, rem(20));
+        margin-top: rem(2);
+      }
+    }
+  }
+}

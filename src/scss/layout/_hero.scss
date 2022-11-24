@@ -1,0 +1,36 @@
+@use "../utils/variables" as *;
+@use "../utils/mixins" as *;
+@use "../utils/functions" as *;
+
+.hero {
+  width: clamp($width-start, 55vw, rem(700));
+  text-align: center;
+  padding-top: rem(75);
+
+  img {
+    width: clamp($width-start, 50vw, rem(800));
+  }
+
+  &__title {
+    padding: rem(40) 0 rem(30) 0;
+
+    @include breakpoint(small) {
+      padding: rem(30) 0 rem(20) 0;
+    }
+  }
+
+  &__body {
+    font-size: $fs-body;
+    line-height: 1.5;
+    padding: 0 rem(70) rem(40) rem(70);
+
+    @include breakpoint(small) {
+      padding: 0 0 rem(30) rem(0);
+    }
+  }
+
+  &__btn-cta {
+    display: inline-block;
+    padding: rem(18) rem(95);
+  }
+}

@@ -1,0 +1,71 @@
+@use "../utils/variables" as *;
+@use "../utils/mixins" as *;
+@use "../utils/functions" as *;
+
+.testimonials {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: rem(40);
+  width: clamp(rem(260), 80vw, rem(1300));
+  position: relative;
+
+  @include breakpoint(small) {
+    grid-template-columns: 1fr;
+  }
+
+  &::before {
+    content: "";
+    background-image: url(/images/bg-quotes.png);
+    background-repeat: no-repeat;
+    position: absolute;
+    top: rem(105);
+    left: rem(-10);
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+
+    @include breakpoint(small) {
+      background-size: 5vw;
+      top: rem(125);
+      left: rem(5);
+    }
+  }
+
+  &__card {
+    padding: rem(40) rem(25) rem(25);
+    background-color: $clr-testimonials-bg;
+    transition: transform ease-in-out 0.3s, background-color ease-in-out 0.3s;
+    cursor: pointer;
+
+    &:hover {
+      transform: scale(1.05);
+      background-color: $clr-testimonials-hover;
+    }
+  }
+
+  &__user {
+    padding-top: rem(25);
+    gap: rem(8);
+
+    &--avatar {
+      width: rem(25);
+      height: rem(25);
+
+      img {
+        border-radius: 50%;
+      }
+    }
+
+    &--txt {
+      p {
+        font-size: rem(10);
+        font-weight: $fw-bold;
+      }
+
+      small {
+        font-size: rem(9);
+        line-height: 1.8;
+      }
+    }
+  }
+}

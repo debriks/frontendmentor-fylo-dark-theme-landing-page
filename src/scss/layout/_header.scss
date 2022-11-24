@@ -1,0 +1,45 @@
+@use "../utils/variables" as *;
+@use "../utils/mixins" as *;
+@use "../utils/functions" as *;
+
+.header {
+  width: clamp($width-start, 90vw, rem(1300));
+
+  img {
+    width: clamp(rem(100), 12vw, rem(280));
+  }
+
+  &__nav {
+    width: clamp(rem(160), rem(160) + 8vw, rem(270));
+
+    &--link {
+      font-size: $fs-nav;
+      color: $clr-txt-white;
+      display: inline-block;
+      position: relative;
+
+      &:after {
+        background: none repeat scroll 0 0 transparent;
+        bottom: 0;
+        content: "";
+        display: block;
+        height: rem(1);
+        left: 50%;
+        position: absolute;
+        background: $clr-txt-white;
+        transition: width 0.3s ease 0s, left 0.3s ease 0s;
+        width: 0;
+      }
+
+      &:hover:after {
+        width: 100%;
+        left: 0;
+      }
+
+      &:focus:after {
+        width: 100%;
+        left: 0;
+      }
+    }
+  }
+}

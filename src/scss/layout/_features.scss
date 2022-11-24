@@ -1,0 +1,18 @@
+@use "../utils/variables" as *;
+@use "../utils/mixins" as *;
+@use "../utils/functions" as *;
+
+.features {
+  width: clamp($width-start, 75vw, rem(880));
+
+  &__block {
+    &--title {
+      font-size: $fs-h2-feature;
+      padding: rem(30) 0 rem(10) 0;
+    }
+
+    &--body {
+      font-size: $fs-body-sm;
+    }
+  }
+}

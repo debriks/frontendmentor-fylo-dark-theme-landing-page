@@ -1,0 +1,163 @@
+@use "../utils/variables" as *;
+@use "../utils/mixins" as *;
+@use "../utils/functions" as *;
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: $ff-body;
+  color: $clr-txt-white;
+  background: url(/images/bg-curvy-desktop.svg) no-repeat $clr-main-bg;
+  background-size: contain;
+  background-position: center rem(680);
+
+  @include breakpoint(small) {
+    background: url(/images/bg-curvy-mobile.svg) no-repeat $clr-main-bg;
+    background-position: center rem(325);
+  }
+
+  @include breakpoint(medium) {
+    background: url(/images/bg-curvy-mobile.svg) no-repeat $clr-main-bg;
+    background-size: cover;
+    background-position: center rem(360);
+  }
+}
+
+// HELPER CLASSES
+// HELPER CLASSES
+// HELPER CLASSES
+
+// FLEXBOX
+
+.flex {
+  display: flex;
+}
+
+.jc-sb {
+  justify-content: space-between;
+}
+
+.jc-c {
+  justify-content: center;
+}
+
+.ai-c {
+  align-items: center;
+}
+
+.ai-fs {
+  align-items: flex-start;
+}
+
+.jc-fe {
+  justify-content: flex-end;
+}
+
+.col {
+  flex-direction: column;
+}
+
+.gap-footer {
+  gap: 20px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 80px;
+
+  @include breakpoint(small) {
+    grid-template-columns: 1fr;
+  }
+}
+
+// LAYOUT
+
+.container {
+  width: 100%;
+  margin-top: clamp(25px, 4vw, 80px);
+}
+
+.p-inline {
+  padding: 0 rem(140);
+}
+
+.btn {
+  border-radius: rem(50);
+  position: relative;
+  background-color: #ccc;
+  background-image: linear-gradient(
+    to left,
+    hsl(176, 68%, 64%),
+    hsl(198, 60%, 50%)
+  );
+  z-index: 1;
+
+  &:after {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(
+      to left,
+      hsl(198, 77%, 56%),
+      hsl(176, 89%, 70%)
+    );
+    transition: opacity 0.3s ease-out;
+    z-index: 2;
+    opacity: 0;
+    border-radius: rem(50);
+  }
+
+  &:hover:after {
+    opacity: 1;
+  }
+
+  span {
+    position: relative;
+    z-index: 3;
+    color: $clr-txt-white;
+    font-size: rem(16);
+    font-family: $ff-heading;
+    font-weight: $fw-semibold;
+  }
+}
+
+.pt-section {
+  padding-top: rem(140);
+}
+
+// TEXT
+
+.txt-center {
+  text-align: center;
+}
+
+.txt-h-1 {
+  font-family: $ff-heading;
+  line-height: 1.5;
+  font-size: $fs-h1;
+}
+
+.txt-body {
+  font-size: $fs-body;
+}
+
+.txt-body-sm {
+  font-size: $fs-body-sm;
+}
+
+.txt-sm {
+  font-size: $fs-small;
+}
+
+.txt-grey {
+  color: $clr-txt-light-grey;
+}
+
+.br-testimonial {
+  border-radius: rem(6);
+}

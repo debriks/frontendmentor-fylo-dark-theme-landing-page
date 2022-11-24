@@ -1,0 +1,55 @@
+@use "./functions" as *;
+
+// TYPOGRAPHY
+
+// Font sizes
+$fs-body: clamp(rem(14), 3vw, rem(18));
+$fs-body-sm: clamp(rem(14), 1vw, rem(16));
+
+$fs-h1: clamp(rem(22), 4vw, rem(37));
+
+$fs-h1-feature: clamp(rem(18), 3vw, rem(37));
+$fs-h2: clamp(rem(22), 2.5vw, rem(32));
+$fs-h2-feature: clamp(rem(18), 2.5vw, rem(20));
+
+$fs-small: clamp(rem(12), 1vw, rem(16));
+$fs-footer: rem(16);
+$fs-nav: clamp(rem(12), 3.5vw, rem(16));
+
+// Font Family
+$ff-heading: "Raleway", sans-serif;
+$ff-body: "Open Sans", sans-serif;
+
+// Font Weights
+$fw-reg: 400;
+$fw-semibold: 500;
+$fw-bold: 600;
+
+// COLORS
+
+$clr-txt-white: hsl(0, 0%, 100%);
+$clr-txt-light-grey: hsl(0, 1%, 85%);
+
+// Primary
+$clr-footer-signup-bg: hsl(217, 28%, 15%);
+$clr-main-bg: hsl(221, 27%, 16%);
+$clr-footer-bg: hsl(216, 53%, 9%);
+$clr-testimonials-bg: hsl(219, 30%, 18%);
+$clr-testimonials-hover: hsl(221, 26%, 24%);
+
+// Accent
+$clr-cta-gradient: linear-gradient(
+  to left,
+  hsl(176, 68%, 64%),
+  hsl(198, 60%, 50%)
+);
+
+$clr-btn-hover: linear-gradient(
+  to left,
+  hsl(176, 89%, 70%),
+  hsl(198, 77%, 56%)
+);
+$clr-error-red: hsl(0, 100%, 63%);
+$clr-fluo-green: hsl(176, 68%, 64%);
+
+$width-start: rem(300);

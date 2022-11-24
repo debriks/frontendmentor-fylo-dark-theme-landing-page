@@ -1,0 +1,171 @@
+@use "../utils/variables" as *;
+@use "../utils/mixins" as *;
+@use "../utils/functions" as *;
+
+.footer {
+  width: 100%;
+  background-color: $clr-footer-bg;
+  margin-top: rem(360);
+  position: relative;
+
+  a {
+    color: $clr-txt-white;
+    transition: color ease-in-out 0.2s;
+
+    &:hover {
+      color: $clr-txt-light-grey;
+    }
+  }
+
+  &__sign-up {
+    width: clamp(rem(340), 60vw, rem(840));
+    padding: rem(45) rem(50) rem(50);
+    background-color: $clr-footer-signup-bg;
+    border-radius: rem(12);
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    transform: translateY(-150px);
+    box-shadow: 0 0 2rem 0px rgba(1, 2, 3, 0.26);
+
+    @include breakpoint(small) {
+      padding: rem(25);
+    }
+
+    @include breakpoint(medium) {
+      transform: translateY(rem(-200));
+    }
+
+    h2 {
+      font-family: $ff-heading;
+      font-size: $fs-h2;
+    }
+
+    p {
+      font-size: $fs-body-sm;
+      padding: rem(40) rem(50);
+
+      @include breakpoint(medium) {
+        padding: rem(25) 0;
+      }
+    }
+  }
+
+  &__form {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: rem(30);
+
+    @include breakpoint(medium) {
+      grid-template-columns: 1fr;
+      gap: rem(0);
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    input {
+      grid-column: 1/3;
+      padding: rem(18);
+      height: rem(50);
+      border-radius: rem(25);
+      padding-left: rem(50);
+
+      @include breakpoint(medium) {
+        margin-bottom: rem(30);
+        padding-left: rem(25);
+      }
+
+      &:focus {
+        outline: rem(2) solid $clr-fluo-green;
+      }
+    }
+
+    &--error {
+      position: absolute;
+      bottom: (-25);
+      margin-left: rem(50);
+      z-index: 1;
+      color: $clr-error-red;
+      font-size: rem(12);
+
+      @include breakpoint(medium) {
+        bottom: rem(57);
+        margin-left: rem(25);
+      }
+
+      @include breakpoint(small) {
+        margin-left: auto;
+        margin-right: auto;
+        left: 0;
+        right: 0;
+        bottom: rem(57);
+      }
+    }
+
+    .submit-btn {
+      height: rem(50);
+      padding: 0 rem(35);
+      font-size: $fs-body-sm;
+      font-weight: $fw-bold;
+
+      @include breakpoint(medium) {
+        width: 100%;
+      }
+    }
+  }
+
+  &__infos {
+    margin: 0 auto;
+    width: clamp(rem(280), 85vw, rem(1300));
+
+    &--logo {
+      transform: translateY(rem(265));
+    }
+
+    &--contact {
+      display: grid;
+      align-items: flex-start;
+      grid-template-columns: 4fr 2fr 1fr 1fr 2fr;
+      padding: $width-start 0 rem(100);
+      gap: rem(20);
+
+      @include breakpoint(medium) {
+        grid-template-columns: 1fr;
+        gap: rem(40);
+        width: 70vw;
+      }
+
+      p {
+        font-size: $fs-footer;
+      }
+
+      img {
+        width: rem(34);
+      }
+
+      &--address {
+        padding-right: rem(100);
+
+        @include breakpoint(small) {
+          padding: 0;
+        }
+      }
+    }
+  }
+}
+
+.mail,
+.phone img {
+  width: 20px;
+}
+
+.social {
+  justify-content: flex-end;
+
+  @include breakpoint(medium) {
+    justify-content: flex-start;
+  }
+}
